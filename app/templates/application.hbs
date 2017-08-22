@@ -1,5 +1,18 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{app-nav}}
+
+<h1>Welcome to the Message Board!</h1>
+
+API Key: {{config.apiKey}} <br />
+Authorization Code: {{session.data.authenticated.authorizationCode}} <br />
+{{#if session.isAuthenticated}}
+    Authenticated <br />
+    <img src={{model.avatarUrl}} /> <br />
+    Login: {{model.login}} <br />
+    Full Name: {{model.name}}
+{{else}}
+    Unauthenticated
+{{/if}}
+
+<hr />
 
 {{outlet}}
