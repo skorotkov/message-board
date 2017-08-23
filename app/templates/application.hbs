@@ -6,9 +6,6 @@ API Key: {{config.apiKey}} <br />
 Authorization Code: {{session.data.authenticated.authorizationCode}} <br />
 {{#if session.isAuthenticated}}
     Authenticated <br />
-    <img src={{model.avatarUrl}} /> <br />
-    Login: {{model.login}} <br />
-    Full Name: {{model.name}}
 {{else}}
     Unauthenticated
 {{/if}}
