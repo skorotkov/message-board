@@ -5,7 +5,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'message-board',
     environment,
-    rootURL: '/',
+    rootURL: '/ui',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -39,7 +39,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.torii.providers['github-oauth2'].apiKey = process.env.GITHUB_DEV_CLIENT_ID;
-    ENV.torii.providers['github-oauth2'].redirectUri = 'http://6552ed02.ngrok.io/torii/redirect.html';
+    ENV.torii.providers['github-oauth2'].redirectUri = process.env.GITHUB_DEV_REDIRECT_URI + '/ui/torii/redirect.html';
     ENV.torii.providers['github-oauth2'].tokenExchangeUri = process.env.DEV_TOKEN_EXCHANGE_URL;
   }
 
