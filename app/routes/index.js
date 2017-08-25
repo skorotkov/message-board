@@ -1,10 +1,7 @@
 import Ember from 'ember';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+export default Ember.Route.extend({
   model() {
-    if (this.get('session').isAuthenticated) {
-      return this.get('store').findRecord('github-user', '#');
-    }
+    return this.get('store').findAll('post');
   }
 });

@@ -1,3 +1,7 @@
-<img src={{model.avatarUrl}} /> <br />
-Login: {{model.login}} <br />
-Full Name: {{model.name}}
+List<br>
+
+<ul>
+  {{#each model as |post|}}
+    <li>{{post.subject}}</li>
+  {{/each}}
+</ul>

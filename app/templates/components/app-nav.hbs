@@ -1,4 +1,5 @@
 <nav class="navbar navbar-default">
+  <div class="container-fluid">
     <div class="navbar-header">
         {{#link-to 'index' class="navbar-brand"}} Message Board {{/link-to}}
     </div>
@@ -12,13 +13,15 @@
         </li>
     </ul>
 -->
+
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        {{#if loggedIn }}
-          <button {{ action "logout" }} class="btn btn-danger log">Log out</button>
-        {{else}}
-          <button onclick={{ action "login" }} class="btn btn-info log">Log In</button>
-        {{/if}}
-      </li>
+      {{#if loggedIn }}
+        <li><p class="navbar-text">{{ userName }}</p></li>
+        <li><a onclick={{ action "logout" }} href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      {{else}}
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a onclick={{ action "login" }} href="#"><span class="glyphicon glyphicon-log-in"></span> Login with GitHub</a></li>
+      {{/if}}
     </ul>
+  </div>
 </nav>
